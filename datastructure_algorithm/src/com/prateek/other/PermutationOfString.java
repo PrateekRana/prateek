@@ -10,6 +10,7 @@ public class PermutationOfString {
 
 	List<String> permutation(String s) {
 		if (s.length() == 1) {
+			
 			permutationString.add(s);
 		} else {
 			char c = s.charAt(s.length() - 1);
