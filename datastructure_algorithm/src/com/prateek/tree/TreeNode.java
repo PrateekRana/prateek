@@ -14,12 +14,20 @@ public class TreeNode {
 	TreeNode right;
 	static Random random = new Random();
 
-	 @Override
-	    public String toString() {
-	        // Tells if this node is on left or right side side of parent
-	        String label = parent == null ? "" : this == left ? "-L" : "-R";
-	        return data + label;
-	    }
+	@Override
+	public String toString() {
+		// Tells if this node is on left or right side side of parent
+		// String label = parent == null ? "" : this == left ? "-L" : "-R";
+		return "" + data;
+	}
+	
+	public TreeNode() {
+		// TODO Auto-generated constructor stub
+	}
+	
+	public TreeNode(int data){
+		this.data = data;
+	}
 
 	static TreeNode constructTree(int depth) {
 
@@ -53,7 +61,32 @@ public class TreeNode {
 		return toReturn;
 	}
 
-	private static  void asMapHelper(TreeNode node, Map<TreeNode, List<TreeNode>> map) {
+	static void preOrder(TreeNode node) {
+		if (node != null) {
+			System.out.println(node.data);
+			preOrder(node.left);
+			preOrder(node.right);
+		}
+	}
+
+	static void inOrder(TreeNode node) {
+		if (node != null) {
+			inOrder(node.left);
+			System.out.println(node.data);
+			inOrder(node.right);
+		}
+	}
+
+	static void postOrder(TreeNode node) {
+		if (node != null) {
+			postOrder(node.left);
+			postOrder(node.right);
+			System.out.println(node.data);
+		}
+
+	}
+
+	private static void asMapHelper(TreeNode node, Map<TreeNode, List<TreeNode>> map) {
 		if (node == null) {
 			return;
 		}
@@ -70,9 +103,10 @@ public class TreeNode {
 	}
 
 	public static void main(String[] args) {
-		TreeNode node = constructTree(2); 
+		TreeNode node = constructTree(2);
 		GraphViewer.viewGraph(node);
-		System.out.println(TreeNode.constructTree(2));
+		TreeNode.inOrder(node);
+
 	}
 
 }
