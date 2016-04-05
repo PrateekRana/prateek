@@ -10,7 +10,7 @@ public class PermutationOfString {
 
 	List<String> permutation(String s) {
 		if (s.length() == 1) {
-			
+
 			permutationString.add(s);
 		} else {
 			char c = s.charAt(s.length() - 1);
@@ -25,7 +25,7 @@ public class PermutationOfString {
 
 		List<String> result = new ArrayList<>();
 		for (String s : permutationString) {
-			for (int i = 0; i <=s.length(); i++) {
+			for (int i = 0; i <= s.length(); i++) {
 				StringBuffer sf = new StringBuffer().append(s).insert(i, c);
 				result.add(sf.toString());
 			}
@@ -36,7 +36,7 @@ public class PermutationOfString {
 	public static void main(String[] args) {
 
 		PermutationOfString ps = new PermutationOfString();
-		List<String> result = ps.permutation("3bcD");
+		List<String> result = ps.permutation("3bc");
 		Collections.sort(result);
 		for (String s : result) {
 			System.out.println(s);

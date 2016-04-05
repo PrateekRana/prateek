@@ -7,12 +7,12 @@ public class PartitonLinkedList {
 		Node l2 = null;
 		
 		while(root!=null){
-			Node next = root.next;
-			if(root.data > x){
-				root.next = l1;
+			Node next = root.getNext();
+			if(root.getData() > x){
+				root.setNext(l1);
 				l1 = root;
 			}else{
-				root.next = l2;
+				root.setNext(l2);
 				l2 = root;
 			}
 			root = next;

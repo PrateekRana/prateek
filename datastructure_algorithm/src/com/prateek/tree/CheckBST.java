@@ -19,7 +19,7 @@ public class CheckBST {
 	}
 	
 	public static void main(String[] args) {
-		int[] array = {1,2,3,4,5,6,6,8,9,10};
+		int[] array = {100,2,3,4,5,6,6,8,9,10};
 		TreeNode t = BSTFromArray.constructBSTFromGivenArray(array, 0,array.length-1);
 		
 		System.out.println(CheckBST.isBST(t));

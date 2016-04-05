@@ -6,14 +6,14 @@ public class RemoveDuplicates {
 		Node current = head;
 		while(current!=null){
 			Node runner = current;
-			while(runner.next!=null){
-				if(current.data == runner.next.data){
-					runner.next = runner.next.next;
+			while(runner.getNext()!=null){
+				if(current.getData() == runner.getNext().getData()){
+					runner.setNext(runner.getNext().getNext());
 				}else{
-					runner = runner.next;
+					runner = runner.getNext();
 				}
 			}
-			current = current.next;
+			current = current.getNext();
 		}
 	}
 }
